@@ -9,9 +9,8 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion '19.1.0'
-
+    compileSdkVersion 21
+    buildToolsVersion '21.1.2'
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
@@ -32,9 +31,13 @@ android {
         debug.setRoot('build-types/debug')
         release.setRoot('build-types/release')
     }
-
     //FIXME: remove this after lint errors have been taken care of
     lintOptions {
         abortOnError false
+    }
+    defaultConfig {
+        targetSdkVersion 17
+    }
+    productFlavors {
     }
 }

@@ -4,6 +4,7 @@ import org.droidplanner.core.MAVLink.MAVLinkStreams;
 import org.droidplanner.core.MAVLink.WaypointManager;
 import org.droidplanner.core.drone.DroneInterfaces;
 import org.droidplanner.core.drone.Preferences;
+import org.droidplanner.core.drone.profiles.ControlProtocol;
 import org.droidplanner.core.drone.profiles.Parameters;
 import org.droidplanner.core.drone.profiles.VehicleProfile;
 import org.droidplanner.core.drone.variables.Altitude;
@@ -46,6 +47,8 @@ public interface Drone {
 	public State getState();
 
 	public Parameters getParameters();
+
+	public ControlProtocol getControls();
 
 	public void setType(int type);
 

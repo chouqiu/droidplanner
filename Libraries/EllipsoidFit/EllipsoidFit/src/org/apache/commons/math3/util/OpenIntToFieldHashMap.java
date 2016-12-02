@@ -29,7 +29,7 @@ import org.apache.commons.math3.FieldElement;
 /**
  * Open addressed map from int to FieldElement.
  * <p>This class provides a dedicated map from integers to FieldElements with a
- * much smaller memory overhead than standard <code>java.util.Map</code>.</p>
+ * much smaller memory overhead than standard <code>java.org.droidplanner.android.util.Map</code>.</p>
  * <p>This class is not synchronized. The specialized iterators returned by
  * {@link #iterator()} are fail-fast: they throw a
  * <code>ConcurrentModificationException</code> when they detect the map has been

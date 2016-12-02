@@ -26,7 +26,7 @@ import java.util.NoSuchElementException;
 /**
  * Open addressed map from int to double.
  * <p>This class provides a dedicated map from integers to doubles with a
- * much smaller memory overhead than standard <code>java.util.Map</code>.</p>
+ * much smaller memory overhead than standard <code>java.org.droidplanner.android.util.Map</code>.</p>
  * <p>This class is not synchronized. The specialized iterators returned by
  * {@link #iterator()} are fail-fast: they throw a
  * <code>ConcurrentModificationException</code> when they detect the map has been

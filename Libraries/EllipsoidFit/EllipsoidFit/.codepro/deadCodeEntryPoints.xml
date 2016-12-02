@@ -10,9 +10,9 @@
 		<explicit-entry-point
 				handle="=EllipsoidFit/src&lt;ellipsoidFit{FitPoints.java#"/>
 		<explicit-entry-point
-				handle="=EllipsoidFit/src&lt;ellipsoidFit{FitPoints.java#java.util.ArrayList"/>
+				handle="=EllipsoidFit/src&lt;ellipsoidFit{FitPoints.java#java.org.droidplanner.android.vlcutil.ArrayList"/>
 		<explicit-entry-point
-				handle="=EllipsoidFit/src&lt;ellipsoidFit{FitPoints.java#java.util.Arrays"/>
+				handle="=EllipsoidFit/src&lt;ellipsoidFit{FitPoints.java#java.org.droidplanner.android.vlcutil.Arrays"/>
 		<explicit-entry-point
 				handle="=EllipsoidFit/src&lt;ellipsoidFit{FitPoints.java#org.apache.commons.math3.linear.Array2DRowRealMatrix"/>
 		<explicit-entry-point

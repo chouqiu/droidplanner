@@ -3,6 +3,7 @@ package org.droidplanner.core.drone;
 import org.droidplanner.core.MAVLink.MAVLinkStreams;
 import org.droidplanner.core.MAVLink.WaypointManager;
 import org.droidplanner.core.drone.profiles.Parameters;
+import org.droidplanner.core.drone.profiles.ControlProtocol;
 import org.droidplanner.core.drone.profiles.VehicleProfile;
 import org.droidplanner.core.drone.variables.Altitude;
 import org.droidplanner.core.drone.variables.Battery;
@@ -54,6 +55,7 @@ public class DroneImpl implements Drone {
 	private final State state;
 	private final HeartBeat heartbeat;
 	private final Parameters parameters;
+	private final ControlProtocol controls;
 
 	private final MAVLinkStreams.MAVLinkOutputStream MavClient;
 	private final Preferences preferences;
@@ -67,6 +69,7 @@ public class DroneImpl implements Drone {
 		state = new State(this, clock, handler);
 		heartbeat = new HeartBeat(this, handler);
 		parameters = new Parameters(this, handler);
+		controls = new ControlProtocol(this, handler);
 
         RC = new RC(this);
         GPS = new GPS(this);
@@ -149,6 +152,11 @@ public class DroneImpl implements Drone {
 	@Override
 	public Parameters getParameters() {
 		return parameters;
+	}
+
+	@Override
+	public ControlProtocol getControls() {
+		return controls;
 	}
 
 	@Override

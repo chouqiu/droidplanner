@@ -18,6 +18,7 @@ public enum ApmModes {
 	FIXED_WING_GUIDED (15,"Guided",MAV_TYPE.MAV_TYPE_FIXED_WING),
 
 	ROTOR_STABILIZE(0, "Stabilize", MAV_TYPE.MAV_TYPE_QUADROTOR),
+	ROTOR_MANUAL(19, "MANUAL", MAV_TYPE.MAV_TYPE_QUADROTOR),
 	ROTOR_ACRO(1,"Acro", MAV_TYPE.MAV_TYPE_QUADROTOR),
 	ROTOR_ALT_HOLD(2, "Alt Hold",MAV_TYPE.MAV_TYPE_QUADROTOR),
 	ROTOR_AUTO(3, "Auto",MAV_TYPE.MAV_TYPE_QUADROTOR),
@@ -40,7 +41,7 @@ public enum ApmModes {
 	ROVER_GUIDED(15, "GUIDED", MAV_TYPE.MAV_TYPE_GROUND_ROVER),
 	ROVER_INITIALIZING(16, "INITIALIZING", MAV_TYPE.MAV_TYPE_GROUND_ROVER),
 
-	UNKNOWN(-1, "Unknown", MAV_TYPE.MAV_TYPE_GENERIC);
+	UNKNOWN(-1, "Uuknown", MAV_TYPE.MAV_TYPE_GENERIC);
 
 	private final int number;
     private final String name;
@@ -98,7 +99,7 @@ public enum ApmModes {
 		}
 
 		for (ApmModes mode : ApmModes.values()) {
-			if (mode.getType() == type) {
+			if (mode.getType() == type && (mode.getNumber() == 0 || mode.getNumber() == 19 || mode.getNumber() == 2)) {
 				modeList.add(mode);
 			}
 		}
@@ -117,6 +118,7 @@ public enum ApmModes {
 		case MAV_TYPE.MAV_TYPE_HEXAROTOR:
 		case MAV_TYPE.MAV_TYPE_OCTOROTOR:
 		case MAV_TYPE.MAV_TYPE_HELICOPTER:
+		case MAV_TYPE.MAV_TYPE_SUBMARINE:
 			return true;
 
 		default:

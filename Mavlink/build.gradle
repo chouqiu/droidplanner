@@ -1,14 +1,11 @@
 apply plugin: 'com.android.library'
-
 android {
     compileSdkVersion 21
-    buildToolsVersion "21.0.1"
-
+    buildToolsVersion '21.0.1'
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 21
+        targetSdkVersion 17
     }
-
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
@@ -32,4 +29,9 @@ android {
         debug.setRoot('build-types/debug')
         release.setRoot('build-types/release')
     }
+    productFlavors {
+    }
+}
+
+dependencies {
 }

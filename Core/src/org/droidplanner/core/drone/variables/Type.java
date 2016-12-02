@@ -46,6 +46,7 @@ public class Type extends DroneVariable implements DroneInterfaces.OnDroneListen
 			case MAV_TYPE.MAV_TYPE_HEXAROTOR:
 			case MAV_TYPE.MAV_TYPE_OCTOROTOR:
 			case MAV_TYPE.MAV_TYPE_TRICOPTER:
+			case MAV_TYPE.MAV_TYPE_SUBMARINE:
 				return FirmwareType.ARDU_COPTER;
 
 			case MAV_TYPE.MAV_TYPE_GROUND_ROVER:

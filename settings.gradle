@@ -1,12 +1,10 @@
 //Pure Java project
-include ':Core'
+include ':Core', ':EllipsoidFit', ':vlclib', 'vlc'
 include ':Mavlink'
 
 //Android projects
-include ':Android'
+include ':AndroidNova'
 
 //Library projects
 include ':Libraries:HorizontalVariableListView:HorizontalVariableListView'
-include ':Libraries:usb-serial-for-android:UsbSerialLibrary'
-include ':Libraries:PebbleKit'
-include ':Libraries:EllipsoidFit:EllipsoidFit'
+project(':EllipsoidFit').projectDir = new File('Libraries/EllipsoidFit/EllipsoidFit')

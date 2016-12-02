@@ -240,7 +240,7 @@ public class Demo extends JFrame implements JMapViewerEventListener  {
      * @param args
      */
     public static void main(String[] args) {
-        // java.util.Properties systemProperties = System.getProperties();
+        // java.org.droidplanner.android.util.Properties systemProperties = System.getProperties();
         // systemProperties.setProperty("http.proxyHost", "localhost");
         // systemProperties.setProperty("http.proxyPort", "8008");
         new Demo().setVisible(true);

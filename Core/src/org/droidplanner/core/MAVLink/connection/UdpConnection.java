@@ -17,9 +17,23 @@ public abstract class UdpConnection extends MavLinkConnection {
 	private InetAddress hostAdd;
 
 	private void getUdpStream() throws IOException {
+		hostPort = 14551;
+		//hostAdd = InetAddress.getByName("192.168.190.1");
+		hostAdd = InetAddress.getByName("192.168.31.238");
+
 		socket = new DatagramSocket(serverPort);
 		socket.setBroadcast(true);
 		socket.setReuseAddress(true);
+
+		//sendInitPacket();
+	}
+
+	private void sendInitPacket() throws IOException {
+		byte[] buf = new byte[2]; //('\x55', '\xee');
+		buf[0] = 0x55;
+		buf[1] = (byte)0xee;
+		DatagramPacket packet = new DatagramPacket(buf, buf.length, hostAdd, hostPort);
+		socket.send(packet);
 	}
 
 	@Override
@@ -50,8 +64,8 @@ public abstract class UdpConnection extends MavLinkConnection {
 	public final int readDataBlock(byte[] readData) throws IOException {
 		DatagramPacket packet = new DatagramPacket(readData, readData.length);
 		socket.receive(packet);
-		hostAdd = packet.getAddress();
-		hostPort = packet.getPort();
+		//hostAdd = packet.getAddress();
+		//hostPort = packet.getPort();
 		return packet.getLength();
 	}
 

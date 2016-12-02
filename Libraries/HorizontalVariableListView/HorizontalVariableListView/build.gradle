@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.12.2'
+        classpath 'com.android.tools.build:gradle:2.2.2'
     }
 }
 apply plugin: 'com.android.library'
@@ -13,12 +13,11 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "19.1.0"
-
+    compileSdkVersion 21
+    buildToolsVersion '21.0.1'
     defaultConfig {
         minSdkVersion 9
-        targetSdkVersion 19
+        targetSdkVersion 17
     }
     sourceSets {
         main {
@@ -33,9 +32,10 @@ android {
 
         instrumentTest.setRoot('tests')
     }
-
     //FIXME: remove this after lint errors have been taken care of
     lintOptions {
         abortOnError false
+    }
+    productFlavors {
     }
 }

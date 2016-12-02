@@ -1,9 +1,12 @@
 package org.droidplanner.core.drone.profiles;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.droidplanner.core.MAVLink.MavLinkManual;
 import org.droidplanner.core.MAVLink.MavLinkParameters;
 import org.droidplanner.core.drone.DroneInterfaces;
 import org.droidplanner.core.drone.DroneInterfaces.DroneEventsType;

@@ -17,23 +17,17 @@ configurations {
 
 dependencies {
     compile project(':Mavlink')
-    compile project(':Libraries:EllipsoidFit:EllipsoidFit')
-
     //FIXME: hackish implementation
-    unitTestCompile files("$project.buildDir/intermediates/classes/release")
-    unitTestCompile files("${project(':Mavlink').buildDir}/intermediates/classes/release")
-    unitTestCompile 'junit:junit:3.8.1'
+    compile project(':EllipsoidFit')
 }
 
 android {
     compileSdkVersion 21
-    buildToolsVersion "21.0.1"
-
+    buildToolsVersion '21.0.1'
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 21
+        targetSdkVersion 17
     }
-
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
@@ -48,6 +42,8 @@ android {
         androidTest {
             java.srcDirs = ['test']
         }
+    }
+    productFlavors {
     }
 }
 
